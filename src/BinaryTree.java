@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Created by Developer on 4/13/2017.
  */
@@ -17,6 +20,23 @@ public class BinaryTree {
 
     private void visit(BTNode node) {
         System.out.println("[" + node.getNumber() + "]");
+    }
+
+
+    public void breadthFirst() {
+        Queue<BTNode> queue = new LinkedList<BTNode>();
+        BTNode n = root;
+        if  (n != null) {
+            queue.offer(n);
+            while (!queue.isEmpty()) {
+                n = (BTNode) queue.poll();
+                visit(n);
+                if (n.left != null)
+                    queue.offer(n.left);
+                if (n.right != null)
+                    queue.offer(n.right);
+            }
+        }//end while
     }
 
     public  static class BTNode {
@@ -41,8 +61,9 @@ public class BinaryTree {
             return right;
         }
 
-        public void setRight(BTNode right) {
+        public BTNode setRight(BTNode right) {
             this.right = right;
+            return right;
         }
 
         public int getNumber() {

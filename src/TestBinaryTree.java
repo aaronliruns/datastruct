@@ -14,12 +14,17 @@ public class TestBinaryTree {
         BinaryTree.BTNode root = bt.setRoot(new BinaryTree.BTNode(0));
         root  = root.setLeft(new BinaryTree.BTNode(1));
         BinaryTree.BTNode left  = root.setLeft(new BinaryTree.BTNode(2));
-        BinaryTree.BTNode right = root.setLeft(new BinaryTree.BTNode(3));
+        BinaryTree.BTNode right = root.setRight(new BinaryTree.BTNode(3));
 
         root = bt.getRoot();
-        root  = root.setLeft(new BinaryTree.BTNode(4));
+        root  = root.setRight(new BinaryTree.BTNode(4));
         left  = root.setLeft(new BinaryTree.BTNode(5));
-        right = root.setLeft(new BinaryTree.BTNode(6));
+        right = root.setRight(new BinaryTree.BTNode(6));
+    }
+
+    @Test
+    public void testBreathFirst() {
+        bt.breadthFirst();
     }
 
 
