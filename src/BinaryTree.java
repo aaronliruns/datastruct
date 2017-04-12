@@ -23,9 +23,8 @@ public class BinaryTree {
     }
 
 
-    public void breadthFirst() {
+    public void breadthFirst(BTNode n) {
         Queue<BTNode> queue = new LinkedList<BTNode>();
-        BTNode n = root;
         if  (n != null) {
             queue.offer(n);
             while (!queue.isEmpty()) {
@@ -37,6 +36,30 @@ public class BinaryTree {
                     queue.offer(n.right);
             }
         }//end while
+    }
+
+    public void preorderDepthFirst(BTNode node) {
+        if (node != null) {
+            visit(node);
+            preorderDepthFirst(node.left);
+            preorderDepthFirst(node.right);
+        }
+    }
+
+    public void postorderDepthFirst(BTNode node) {
+        if (node != null) {
+            postorderDepthFirst(node.left);
+            postorderDepthFirst(node.right);
+            visit(node);
+        }
+    }
+
+    public void pinorderDepthFirst(BTNode node) {
+        if (node != null) {
+            pinorderDepthFirst(node.left);
+            visit(node);
+            pinorderDepthFirst(node.right);
+        }
     }
 
     public  static class BTNode {

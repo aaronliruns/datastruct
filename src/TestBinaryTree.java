@@ -24,9 +24,23 @@ public class TestBinaryTree {
 
     @Test
     public void testBreathFirst() {
-        bt.breadthFirst();
+        bt.breadthFirst(bt.getRoot());
     }
 
+    @Test
+    public void testPreorderDepthFirst() {
+        bt.preorderDepthFirst(bt.getRoot());
+    }
+
+    @Test
+    public void testPostorderDepthFirst() {
+        bt.postorderDepthFirst(bt.getRoot());
+    }
+
+    @Test
+    public void testInorderDepthFirst() {
+        bt.pinorderDepthFirst(bt.getRoot());
+    }
 
 
 }
