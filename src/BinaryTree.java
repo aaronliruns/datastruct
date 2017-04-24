@@ -18,7 +18,7 @@ public class BinaryTree {
     }
 
 
-    private void visit(BTNode node) {
+    protected void visit(BTNode node) {
         System.out.println("[" + node.getNumber() + "]");
     }
 

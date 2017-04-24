@@ -9,7 +9,15 @@ public class Recursion {
         return x * power(x, n - 1); //inductive step
     }
 
-    public static void main(String[] args) {
+    public static long factorial(long n) {
+        if (n == 0L)
+            return 1L;
+        return n * factorial(n - 1);
+    }
 
+    public static long fib(long n) {
+        if (n<2L)
+            return n;
+        return fib(n-2) + fib(n-1);
     }
 }
