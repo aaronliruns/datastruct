@@ -1,5 +1,6 @@
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  * Created by Developer on 4/13/2017.
@@ -40,6 +41,11 @@ public class TestBinaryTree {
     @Test
     public void testInorderDepthFirst() {
         bt.pinorderDepthFirst(bt.getRoot());
+    }
+
+    @Test
+    public void testIfBinaryTreeBalanced() {
+        assertTrue(bt.isBalanced(bt.getRoot()));
     }
 
 
